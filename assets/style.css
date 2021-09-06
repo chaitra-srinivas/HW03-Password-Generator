@@ -52,7 +52,22 @@ header {
 
 .card-body {
   min-height: 100px;
+
 }
+.checkboxes label {
+  display: inline-block;
+  padding: 20px;
+  white-space: nowrap;
+}
+.checkboxes input {
+  vertical-align: middle;
+  
+}
+.checkboxes label span {
+  vertical-align: middle;
+  text-align: center;
+}
+
 
 .card-footer {
   text-align: center;
