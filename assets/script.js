@@ -94,6 +94,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  
 
   var password = generatePassword(getUserSelection());
   if (!password) {
@@ -105,14 +106,17 @@ function writePassword() {
 }
 
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
 
 
 // To clear the text area 
 
-function clearTextarea()
+function clearTextArea()
 {
-  document.getElementById("#password").value = "";
+  
+  generateBtn.addEventListener("click", document.getElementById("#password").innerHTML = '');
+  //document.getElementById("password").textContent = "";
 
 }
 
@@ -123,7 +127,7 @@ function getUserSelection() {
     "Choose the length of the password: 8 - 128 characters"
   );
   // validating user input
-  if (pwdLength < 8 || pwdLength > 128) {
+  if (pwdLength < 8 || pwdLength > 128  || isNaN(pwdLength)) {
     alert(
       "Please enter a value between 8 - 128 characters for password length"
     );
@@ -141,7 +145,7 @@ function getUserSelection() {
       "Please choose atleast one type of character to generate a unique password."
     );
     return;
-  } else {
+  } else {    // Assign user choice to an object
     var userSelection = {
       passwordLength: Number(pwdLength),
       hasSpecialChars: isSplChars,
@@ -151,13 +155,8 @@ function getUserSelection() {
     };
   }
 
-  /* var pwdLength = 10;
-var isSplChars = true;
-var isNumeric = true;
-var isLowerCase = true;
-var isUpperCase = true;   */
 
-  return userSelection;
+  return userSelection; 
 }
 
 // Functions to generate random characters
@@ -182,6 +181,8 @@ function getRandomUpperCaseChar() {
   return getRandomElement(upperCasedCharacters);
 }
 
+// Fucntion to generate an array with the user's choice of characters
+
 function getCharGenerators(userSelection) {
   var charGenerators = [];
 
@@ -198,24 +199,24 @@ function getCharGenerators(userSelection) {
     charGenerators.push(getRandomUpperCaseChar);
   }
 
-  return charGenerators;
+  return charGenerators; // Returns array with user's choice only
 }
 
 function generatePassword(userSelection) {
+  
   if (!userSelection) {
-    return;
+    return; //End function here if user did not select any type of char
   } else {
-    var charGenerators = getCharGenerators(userSelection);
-    var passwordGenerated = "";
+    var charGenerators = getCharGenerators(userSelection); // Get user's choice
+    var passwordGenerated = ""; // Initialize a string to store the generated password
 
     for (var i = 0; i < userSelection.passwordLength; i++) {
-      var randomCharGenerator = getRandomElement(charGenerators);
-      passwordGenerated += randomCharGenerator();
+      var randomCharGenerator = getRandomElement(charGenerators); // Chooses a random char generator function from the user choice array and returns that function
+      passwordGenerated += randomCharGenerator(); // Each time getRandomElement function is invoked which returns a randomly generated char that gets appended to the passwordgenerated string
     }
 
     return passwordGenerated;
   }
 }
 
-/* console.log(generatePassword(getUserSelection()));
- */
+
