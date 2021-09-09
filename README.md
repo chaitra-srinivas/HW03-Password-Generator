@@ -13,5 +13,5 @@ Screen shots:
 4. ![Password generated](./assets/Screenshots/generatedPassword.png)
 
 
-1. ![Deployed application]: https://chaitra-srinivas.github.io/
+1. ![Deployed application]: https://chaitra-srinivas.github.io/HW03-Password-Generator/
 2. ![Github link]: https://github.com/chaitra-srinivas/HW03-Password-Generator
