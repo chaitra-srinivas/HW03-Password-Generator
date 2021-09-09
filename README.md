@@ -11,7 +11,7 @@ Screen shots:
 2. ![validations.](./assets/Screenshots/validations.png)
 3. ![validations.](./assets/Screenshots/validations1.png)
 4. ![Password generated](./assets/Screenshots/generatedPassword.png)
-5. 
+
 
 1. ![Deployed application]: https://chaitra-srinivas.github.io/
 2. ![Github link]: https://github.com/chaitra-srinivas/HW03-Password-Generator
